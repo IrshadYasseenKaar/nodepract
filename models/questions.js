@@ -18,4 +18,4 @@ const questionSchema = new mongoose.Schema(
 )
 questionSchema.index({ 'q_no': 1 }, { unique: true })
 const Questions = questionSchema('Questions', questionSchema)
-// module.exports = Questions
+module.exports = Questions
