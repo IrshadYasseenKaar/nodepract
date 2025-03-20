@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const answerRoute = require('./routes/answers.route');
+const questionRoute = require('./routes/question.route')
 
 dotenv.config();
 const app = express();
@@ -10,6 +11,7 @@ const uri = process.env._MONGO_cs_1;
 // middleware for json
 app.use(express.json())
 app.use("/api/answers",answerRoute)
+app.use("/api/questions",questionRoute)
 
 // Connect to MongoDB
 mongoose.connect(uri).then(() => {
