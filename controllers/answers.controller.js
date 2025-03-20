@@ -87,12 +87,12 @@ const deleteOneByKey= async (req, res) => {
 const putOneByKey= async (req, res) => {
     try {
         console.log("update trigged")
-        const { stud_id, ans_no } = req.params;
-        const answer = await Answers.findOneAndUpdate({ stud_id, ans_no }, req.body)
+        const { st_id, an_no } = req.params;
+        const answer = await Answers.findOneAndUpdate({stud_id:st_id, ans_no:an_no }, req.body)
         if (!answer) {
             res.status(404).json({'text-Error':"No answer found"})
         }
-        const update_ans = await Answers.findOne({ stud_id, ans_no });
+        const update_ans = await Answers.findOne({ stud_id:st_id, ans_no:an_no  });
         res.status(200).json(update_ans)
     }
     catch (e) {
