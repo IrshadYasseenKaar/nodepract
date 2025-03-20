@@ -50,8 +50,8 @@ const getOneAnswerByKey= async (req, res) => {
     try {
         console.log("get trigged")
 
-        const { s_id, a_no } = req.params
-        const answer = await Answers.findOne({ stud_id: s_id, ans_no: a_no })
+        const { st_id, an_no } = req.params
+        const answer = await Answers.findOne({ stud_id: st_id, ans_no: an_no })
         if (!answer) {
             return res.status(404).json("Answer not found")
         }
