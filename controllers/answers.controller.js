@@ -69,8 +69,8 @@ const deleteOneByKey= async (req, res) => {
     try {
         console.log("delete trigged")
 
-        const { stu_id,ans_no } = req.params;
-        const answer = await Answers.findOneAndDelete({stud_id: stu_id,ans_no: ans_no });
+        const { st_id,an_no } = req.params;
+        const answer = await Answers.findOneAndDelete({stud_id: st_id,ans_no: an_no });
         if (!answer) {
             return res.status(404).json({ 'message': 'Answer not found' });
         }
