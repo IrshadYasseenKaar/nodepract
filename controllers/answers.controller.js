@@ -1,4 +1,4 @@
-const Answers = require("../models/answers.model")
+const Answers = require("../models/answers")
 
 
 //home
