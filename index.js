@@ -2,17 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const answerRoute = require('./routes/answers.route');
-// const Answers = require('./models/answers');
-// const router = require(".routes/")
+
 dotenv.config();
 const app = express();
 const uri = process.env._MONGO_cs_1;
-// ylajhog g
+
 // middleware for json
 app.use(express.json())
 app.use("/api/answers",answerRoute)
 
-// console.log('MongoDB Connection URI:', uri); 
 // Connect to MongoDB
 mongoose.connect(uri).then(() => {
     console.log('Connected to MongoDB');
